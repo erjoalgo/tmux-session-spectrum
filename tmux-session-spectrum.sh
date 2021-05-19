@@ -7,7 +7,6 @@ source "$CURRENT_DIR/tmux-session-spectrum.conf" 2>/dev/null
 
 if test -n "${DESKTOP_GROUP_NUMBER:-}"; then
   SESSION_NAME="group-${DESKTOP_GROUP_NUMBER}"
-  echo "renaming session to ${SESSION_NAME}"
   tmux rename-session "${SESSION_NAME}"
 fi
 
