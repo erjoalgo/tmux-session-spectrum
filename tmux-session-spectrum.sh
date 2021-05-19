@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# forked from github.com/a-rodin
+
 CURRENT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 source "$CURRENT_DIR/tmux-session-spectrum.conf" 2>/dev/null
 
