@@ -27,5 +27,5 @@ IDX=$(python3 -c "print (0x${SESSION_NAME_HEX} % ${#STYLES[@]})")
 STYLE=${STYLES[$(((IDX) % ${#STYLES[@]}))]}
 tmux set -t $SESSION_NAME status-style bg=$STYLE
 tmux set -t $SESSION_NAME pane-active-border-style fg=$STYLE
-tmux set-hook -t $SESSION_NAME after-new-window \
-  "set -t $SESSION_ID pane-active-border-style fg=$STYLE"
+tmux set-hook after-new-window \
+     "set -t $SESSION_NAME pane-active-border-style fg=$STYLE"
