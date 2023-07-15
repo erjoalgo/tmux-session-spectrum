@@ -11,15 +11,17 @@ if test -e "${CONF}"; then
 fi
 
 if test -n "${DESKTOP_GROUP_NUMBER:-}"; then
-  SESSION_NAME="group-${DESKTOP_GROUP_NUMBER}"
-  tmux rename-session "${SESSION_NAME}"
+    SESSION_NAME="group-${DESKTOP_GROUP_NUMBER}"
+    tmux rename-session "${SESSION_NAME}"
 fi
 
+
 if [ -n "${STYLES:-}" ]; then
-  STYLES=(${STYLES})
+    STYLES=(${STYLES})
 else
-  STYLES=(colour2 colour4 colour5 colour6 colour8 colour1 colour3)
+    STYLES=(colour2 colour4 colour5 colour6 colour8 colour1 colour3)
 fi
+
 SESSION_NAME=$(tmux display-message -p '#S')
 SESSION_NAME_HEX=$(md5sum <<< "${SESSION_NAME}" | cut -f1 -d' ')
 IDX=$(python3 -c "print (0x${SESSION_NAME_HEX} % ${#STYLES[@]})")
