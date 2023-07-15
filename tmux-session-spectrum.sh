@@ -5,7 +5,10 @@ set -euo pipefail
 # forked from github.com/a-rodin
 
 CURRENT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-source "$CURRENT_DIR/tmux-session-spectrum.conf" 2>/dev/null
+CONF="$CURRENT_DIR/tmux-session-spectrum.conf"
+if test -e "${CONF}"; then
+    source "${CONF}" 2>/dev/null
+fi
 
 if test -n "${DESKTOP_GROUP_NUMBER:-}"; then
   SESSION_NAME="group-${DESKTOP_GROUP_NUMBER}"
