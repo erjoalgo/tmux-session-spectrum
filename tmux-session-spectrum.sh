@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -euo pipefail
+
 # forked from github.com/a-rodin
 
 CURRENT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
