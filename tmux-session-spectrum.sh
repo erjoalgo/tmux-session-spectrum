@@ -15,7 +15,7 @@ if test -n "${DESKTOP_GROUP_NUMBER:-}"; then
   tmux rename-session "${SESSION_NAME}"
 fi
 
-if [ -n "$STYLES" ]; then
+if [ -n "${STYLES:-}" ]; then
   STYLES=(${STYLES})
 else
   STYLES=(colour2 colour4 colour5 colour6 colour8 colour1 colour3)
